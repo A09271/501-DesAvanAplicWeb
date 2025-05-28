@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function Greeting(name:string){
     const greetings: string[] = [
         `Hello ${name}`,

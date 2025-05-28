@@ -11,7 +11,7 @@ type UserContextType = {
 
 const defaultUserContextValue: UserContextType = {
   user: { role: 'employee' },
-  login: (role: string) => {},
+  login: () => {},
 };
 
 export const UserContext = createContext<UserContextType>(defaultUserContextValue);
