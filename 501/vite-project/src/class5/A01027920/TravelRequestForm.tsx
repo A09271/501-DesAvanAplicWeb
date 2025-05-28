@@ -1,4 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const travelRequestSchema = Yup.object().shape({
@@ -62,7 +63,9 @@ const TravelRequestForm = () => {
             Submit
           </button>
           <br />
-          <a href='/A01027920/Home.html' className='buttonlink'>Regresar a menu</a>
+          <Link to='/A01027920' className='buttonlink'>
+            Regresar a menu
+          </Link>
         </Form>
       )}
     </Formik>

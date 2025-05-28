@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { UserContext } from './UserContext';
 import Login from './Login';
+import { Link } from 'react-router-dom';
 
 const Dashboard: React.FC = () => {
   const context = useContext(UserContext);
@@ -30,7 +31,9 @@ const Dashboard: React.FC = () => {
         </div>
       )}
       <br />
-      <a href='/A01027920/Home.html' className='buttonlink'>Regresar a menu</a>
+      <Link to='/A01027920' className='buttonlink'>
+        Regresar a menu
+      </Link>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const RealTimeNotifications: React.FC = () => {
   const [notifications, setNotifications] = useState<string[]>([]);
@@ -88,6 +89,9 @@ const RealTimeNotifications: React.FC = () => {
           <li key={index}>{notification}</li>
         ))}
       </ul>
+      <Link to='/A01027920' className='buttonlink'>
+        Regresar a menu
+      </Link>
     </div>
   );
 };

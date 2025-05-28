@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputField from "./InputField";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -29,7 +30,9 @@ function Login() {
           />
           <Button label="Submit" onClick={handleSubmit}/>
           <br></br>
-          <a href='/A01027920/Home.html' className='buttonlink'>Regresar a menu</a>
+          <Link to='/A01027920' className='buttonlink'>
+            Regresar a menu
+          </Link>
     </>
   );
 }

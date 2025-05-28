@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { Greeting } from './Greetings';
+import { Link } from 'react-router-dom';
 
 function CatGreeting() {
   const [name, setName] = useState<string>('');
@@ -30,87 +31,51 @@ function CatGreeting() {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: '#606060',
-        color: '#00ff00',
-        fontFamily: 'Arial, sans-serif',
-        textAlign: 'center',
-      }}
-    >
-      <h3
-        style={{
-          fontSize: '1.5em',
-          textShadow: '1px 1px 2px #000000',
-          margin: '5px 0', // Reduced margin
-        }}
-      >
+    // Use the CSS class for the container div
+    <div className="cat-greeting-container">
+      {/* Use the CSS class for the title */}
+      <h3 className="cat-greeting-title">
         Welcome
       </h3>
       <form onSubmit={handleSubmit}>
-        <label style={{ fontSize: '1em' }}>
+        <label>
+          {/* Use the CSS class for the input */}
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name"
-            style={{
-              backgroundColor: '#303030',
-              color: '#00ff00',
-              border: '1px solid #00ffff',
-              borderRadius: '3px',
-              padding: '3px',
-              margin: '3px',
-              fontSize: '0.9em',
-            }}
+            className="cat-greeting-input"
           />
         </label>
+        {/* Use the CSS class for the button */}
         <button
           type="submit"
-          style={{
-            backgroundColor: '#00ffff',
-            color: '#000000',
-            border: '1px solid #00ffff',
-            borderRadius: '3px',
-            padding: '5px 10px',
-            margin: '5px',
-            fontSize: '1em',
-            cursor: 'pointer',
-            textShadow: '1px 1px 1px #000000',
-          }}
+          className="cat-greeting-button"
         >
           Recibir saludo
         </button>
       </form>
       {loading ? (
-        <p style={{ fontSize: '0.9em' }}>Loading...</p>
+        // Use the CSS class for the loading text
+        <p className="cat-greeting-loading">Loading...</p>
       ) : (
         catImageUrl && (
+          // Use the CSS class for the image
           <img
             src={catImageUrl}
             alt="CatSays"
-            style={{ border: '1px solid #00ffff', borderRadius: '3px', maxWidth: '100%' }} // Added maxWidth
+            className="cat-greeting-image"
           />
         )
       )}
       <br />
-      <a
-        href="/A01027920/Home.html"
-        className="buttonlink"
-        style={{
-          color: '#00ffff',
-          textDecoration: 'none',
-          fontSize: '1em',
-          padding: '5px 10px',
-          margin: '5px',
-          border: '1px solid #00ffff',
-          borderRadius: '3px',
-          display: 'inline-block',
-          textShadow: '1px 1px 1px #000000',
-        }}
+      <Link
+        to="/A01027920" // Pointing back to the home route
+        className="buttonlink" // This class is already in the CSS
       >
         Regresar a menu
-      </a>
+      </Link>
     </div>
   );
 }

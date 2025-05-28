@@ -1,10 +1,10 @@
-import { StrictMode, useState } from 'react'
-import { createRoot } from 'react-dom/client'
-import TravelRequestForm from './TravelRequestForm'
-import ExpenseForm from './ExpenseForm'
+import { useState } from 'react';
+import TravelRequestForm from './TravelRequestForm';
+import ExpenseForm from './ExpenseForm';
+import { Link } from 'react-router-dom'; // Import Link
 
-function App() {
-  const [selectedForm, setSelectedForm] = useState<'travel' | 'expense'>('expense')
+function FormMenu() {
+  const [selectedForm, setSelectedForm] = useState<'travel' | 'expense'>('expense');
 
   return (
     <div>
@@ -30,13 +30,11 @@ function App() {
         {selectedForm === 'travel' && <TravelRequestForm />}
         {selectedForm === 'expense' && <ExpenseForm />}
       </main>
-      <a href='/A01027920/Home.html' className='buttonlink'>Regresar a menu</a>
+      <Link to='/A01027920' className='buttonlink'>
+        Regresar a menu
+      </Link>
     </div>
-  )
+  );
 }
 
-createRoot(document.getElementById('login-root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+export default FormMenu;

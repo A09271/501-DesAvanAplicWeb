@@ -2,8 +2,9 @@ import { useState } from 'react';
 import InputField from '../../class2/A01027920/InputField';
 import Button from '../../class2/A01027920/Button';
 import TravelRequestForm from './TravelRequest';
+import { Link } from 'react-router-dom';
 
-const Login = () => {
+const NewLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -45,9 +46,11 @@ const Login = () => {
       />
       <Button label={loading ? 'Loading...' : 'Submit'} onClick={handleSubmit} />
       <br></br>
-      <a href='/A01027920/Home.html' className='buttonlink'>Regresar a menu</a>
+      <Link to='/A01027920' className='buttonlink'>
+        Regresar a menu
+      </Link>
     </div>
   );
 };
 
-export default Login;
+export default NewLogin;
