@@ -1,3 +1,5 @@
+// @ts-ignore: needed for Jest (TS6133)
+import React from 'react';
 import { useState } from 'react';
 import TravelRequestForm from './TravelRequestForm';
 import ExpenseForm from './ExpenseForm';
