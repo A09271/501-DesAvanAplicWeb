@@ -6,7 +6,8 @@ export default {
       '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
       '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/__mocks__/fileMock.js',
     },
-    setupFilesAfterEnv: ['@testing-library/jest-dom'],
+    setupFilesAfterEnv: ['@testing-library/jest-dom', '<rootDir>/src/setupTests.js'],
+    
     testEnvironment: 'jsdom',
   };
   
